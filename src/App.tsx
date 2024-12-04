@@ -1,3 +1,14 @@
+import { Route, BrowserRouter, Routes } from "react-router-dom";
+import Home from "./routes/Home";
+import Detail from "./routes/Detail";
+
 export default function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="movie/:id" element={<Detail />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
